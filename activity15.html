@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Properties in JavaScript</title>
+</head>
+<body>
+
+<h2>JavaScript Object Properties Demo</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+// Creating object
+let person = {
+    name: "Akshaya",
+    age: 22
+};
+
+// Access properties
+output += "<b>Access Properties:</b><br>";
+output += "Name: " + person.name + "<br>";
+output += "Age: " + person["age"] + "<br><br>";
+
+// Add properties
+person.city = "Mumbai";
+person["country"] = "India";
+output += "<b>After Adding Properties:</b><br>";
+output += "City: " + person.city + "<br>";
+output += "Country: " + person.country + "<br><br>";
+
+// Update property
+person.age = 23;
+output += "<b>After Updating Age:</b><br>";
+output += "Age: " + person.age + "<br><br>";
+
+// Delete property
+delete person.city;
+output += "<b>After Deleting City:</b><br>";
+output += "City: " + person.city + "<br><br>";
+
+// Check if property exists
+output += "<b>Check Property:</b><br>";
+output += "'name' in person: " + ("name" in person) + "<br>";
+output += "person.hasOwnProperty('age'): " + person.hasOwnProperty("age") + "<br><br>";
+
+// Accessor property example
+person.firstName = "Akshaya";
+person.lastName = "Nelliat";
+Object.defineProperty(person, "fullName", {
+    get: function() { return this.firstName + " " + this.lastName; },
+    set: function(name) { [this.firstName, this.lastName] = name.split(" "); }
+});
+
+output += "<b>Accessor Property:</b><br>";
+output += "Full Name: " + person.fullName + "<br>";
+person.fullName = "Aks N";
+output += "Updated First Name: " + person.firstName + "<br>";
+output += "Updated Last Name: " + person.lastName + "<br>";
+
+// Display
+document.getElementById("output").innerHTML = output;
+
+</script>
+
+</body>
+</html>

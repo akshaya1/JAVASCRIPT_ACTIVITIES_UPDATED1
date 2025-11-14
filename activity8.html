@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variable Scope in JavaScript</title>
+</head>
+<body>
+
+    <h2>Variable Scope Demo</h2>
+    <p id="output"></p>
+
+    <script>
+        let result = "";
+
+        // ---------------- Global Scope ----------------
+        let globalVar = "I am a Global Variable";
+
+        function showGlobal() {
+            result += "<b>Inside Function:</b> " + globalVar + "<br>";
+        }
+
+        showGlobal();
+        result += "<b>Outside Function:</b> " + globalVar + "<br><br>";
+
+        // ---------------- Local/Function Scope ----------------
+        function localScope() {
+            let localVar = "I am Local to this Function";
+            result += localVar + "<br>";
+        }
+
+        localScope();
+        // result += localVar;  // ❌ Cannot access → will give error
+
+        result += "<i>localVar cannot be used outside the function.</i><br><br>";
+
+        // ---------------- Block Scope ----------------
+        {
+            let blockLet = "Block Scoped (let)";
+            var blockVar = "Not Block Scoped (var)";
+            result += blockLet + "<br>";
+        }
+
+        // result += blockLet; // ❌ Error (let is block scoped)
+        result += blockVar + "<br>"; // ✔ works because var is not block scoped
+
+        // Display output
+        document.getElementById("output").innerHTML = result;
+
+    </script>
+
+</body>
+</html>

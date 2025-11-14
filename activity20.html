@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Arrays</title>
+</head>
+<body>
+
+<h2>JavaScript Array Demo</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+// Creating an array
+let fruits = ["Apple", "Banana", "Mango"];
+output += "<b>Initial Array:</b> " + fruits.join(", ") + "<br>";
+
+// Accessing elements
+output += "<b>First Element:</b> " + fruits[0] + "<br>";
+output += "<b>Last Element:</b> " + fruits[fruits.length - 1] + "<br><br>";
+
+// Modifying elements
+fruits[1] = "Orange";
+fruits.push("Grapes");
+fruits.unshift("Pineapple");
+output += "<b>After Modifications:</b> " + fruits.join(", ") + "<br>";
+
+// Removing elements
+fruits.pop();
+fruits.shift();
+output += "<b>After Removing Elements:</b> " + fruits.join(", ") + "<br><br>";
+
+// Looping through array
+output += "<b>Looping:</b><br>";
+fruits.forEach(fruit => output += fruit + "<br>");
+
+// Array properties
+output += "<br><b>Array Length:</b> " + fruits.length + "<br>";
+
+// Array methods
+output += "<b>Index of Mango:</b> " + fruits.indexOf("Mango") + "<br>";
+output += "<b>Includes Banana:</b> " + fruits.includes("Banana") + "<br>";
+
+// Display output
+document.getElementById("output").innerHTML = output;
+</script>
+
+</body>
+</html>

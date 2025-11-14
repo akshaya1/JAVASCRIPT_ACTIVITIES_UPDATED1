@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML DOM Demo</title>
+    <style>
+        #myDiv { color: blue; font-size: 18px; }
+        .highlight { background-color: yellow; }
+    </style>
+</head>
+<body>
+
+<h2>HTML DOM Demo</h2>
+
+<div id="myDiv">This is a demo div</div>
+<button id="changeTextBtn">Change Text</button>
+<button id="changeColorBtn">Change Color</button>
+<input type="text" id="inputBox" placeholder="Type something">
+<button id="addTextBtn">Add Text</button>
+
+<ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>
+
+<script>
+// Accessing elements
+let div = document.getElementById("myDiv");
+let changeTextBtn = document.getElementById("changeTextBtn");
+let changeColorBtn = document.getElementById("changeColorBtn");
+let addTextBtn = document.getElementById("addTextBtn");
+let inputBox = document.getElementById("inputBox");
+let myList = document.getElementById("myList");
+
+// Change text
+changeTextBtn.addEventListener("click", function() {
+    div.innerText = "Text has been changed!";
+});
+
+// Change color
+changeColorBtn.addEventListener("click", function() {
+    div.style.color = "red";
+});
+
+// Add item to list
+addTextBtn.addEventListener("click", function() {
+    let li = document.createElement("li");
+    li.innerText = inputBox.value;
+    li.classList.add("highlight");
+    myList.appendChild(li);
+    inputBox.value = ""; // clear input
+});
+</script>
+
+</body>
+</html>

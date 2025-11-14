@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Methods Example</title>
+</head>
+<body>
+
+<h2>JavaScript Methods in Objects</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+// 1. Simple method
+let person = {
+    name: "Akshaya",
+    age: 22,
+    greet: function() {
+        return "Hello, my name is " + this.name;
+    }
+};
+output += person.greet() + "<br>";
+
+// 2. Method using ES6 syntax
+let student = {
+    name: "John",
+    marks: [90, 80, 85],
+    average() {
+        let sum = this.marks.reduce((a, b) => a + b, 0);
+        return sum / this.marks.length;
+    }
+};
+output += "Student Average: " + student.average() + "<br>";
+
+// 3. Method calling another method
+let calculator = {
+    add(a, b) {
+        return a + b;
+    },
+    multiply(a, b) {
+        return a * b;
+    },
+    addAndMultiply(a, b) {
+        return this.multiply(this.add(a, b), 2);
+    }
+};
+output += "Add & Multiply: " + calculator.addAndMultiply(3, 4) + "<br>";
+
+// Display output
+document.getElementById("output").innerHTML = output;
+
+</script>
+
+</body>
+</html>

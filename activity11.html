@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Methods in JS</title>
+</head>
+<body>
+
+<h2>Testing Methods in JavaScript</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+// Object with methods
+let calculator = {
+    add(a, b) {
+        return a + b;
+    },
+    multiply(a, b) {
+        return a * b;
+    },
+    subtract(a, b) {
+        return a - b;
+    }
+};
+
+// Test add method
+output += "<b>Testing add method:</b><br>";
+output += "5 + 3 = " + calculator.add(5, 3) + "<br>";
+output += "-2 + 7 = " + calculator.add(-2, 7) + "<br><br>";
+
+// Test multiply method
+output += "<b>Testing multiply method:</b><br>";
+output += "4 * 6 = " + calculator.multiply(4, 6) + "<br>";
+output += "0 * 10 = " + calculator.multiply(0, 10) + "<br><br>";
+
+// Test subtract method
+output += "<b>Testing subtract method:</b><br>";
+output += "10 - 4 = " + calculator.subtract(10, 4) + "<br>";
+output += "5 - 9 = " + calculator.subtract(5, 9) + "<br>";
+
+// Display output
+document.getElementById("output").innerHTML = output;
+
+</script>
+
+</body>
+</html>

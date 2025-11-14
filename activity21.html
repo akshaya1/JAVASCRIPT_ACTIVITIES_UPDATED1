@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Array Methods</title>
+</head>
+<body>
+
+<h2>Array Methods Demo</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+// Create array
+let fruits = ["Apple", "Banana", "Mango"];
+output += "<b>Initial Array:</b> " + fruits.join(", ") + "<br>";
+
+// push & pop
+fruits.push("Grapes");
+output += "<b>After push:</b> " + fruits.join(", ") + "<br>";
+fruits.pop();
+output += "<b>After pop:</b> " + fruits.join(", ") + "<br>";
+
+// unshift & shift
+fruits.unshift("Pineapple");
+output += "<b>After unshift:</b> " + fruits.join(", ") + "<br>";
+fruits.shift();
+output += "<b>After shift:</b> " + fruits.join(", ") + "<br>";
+
+// indexOf & includes
+output += "<b>Index of Banana:</b> " + fruits.indexOf("Banana") + "<br>";
+output += "<b>Includes Mango:</b> " + fruits.includes("Mango") + "<br>";
+
+// slice & splice
+let newFruits = fruits.slice(0,2);
+output += "<b>Slice(0,2):</b> " + newFruits.join(", ") + "<br>";
+fruits.splice(1,1); // remove 1 element at index 1
+output += "<b>After splice(1,1):</b> " + fruits.join(", ") + "<br>";
+
+// map & filter
+let lengths = fruits.map(fruit => fruit.length);
+output += "<b>Lengths of elements:</b> " + lengths.join(", ") + "<br>";
+let filtered = fruits.filter(fruit => fruit.startsWith("A"));
+output += "<b>Filtered (start with A):</b> " + filtered.join(", ") + "<br>";
+
+// sort & reverse
+fruits.sort();
+output += "<b>Sorted:</b> " + fruits.join(", ") + "<br>";
+fruits.reverse();
+output += "<b>Reversed:</b> " + fruits.join(", ") + "<br>";
+
+// Display output
+document.getElementById("output").innerHTML = output;
+</script>
+
+</body>
+</html>

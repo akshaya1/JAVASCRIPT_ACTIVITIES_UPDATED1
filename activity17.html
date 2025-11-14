@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arguments Object in JS</title>
+</head>
+<body>
+
+<h2>JavaScript Arguments Object Demo</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+// Function with unknown number of arguments
+function showArguments() {
+    output += "<b>All arguments passed:</b><br>";
+    for (let i = 0; i < arguments.length; i++) {
+        output += "Argument " + i + ": " + arguments[i] + "<br>";
+    }
+    output += "<br>";
+}
+
+// Function to sum all arguments
+function sumAll() {
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+}
+
+// Calling functions
+showArguments("Akshaya", 22, "Mumbai");
+output += "<b>Sum of 5, 10, 15:</b> " + sumAll(5, 10, 15) + "<br><br>";
+
+// Arrow function example using rest parameters
+const arrowFunc = (...args) => {
+    output += "<b>Arrow Function Arguments:</b> " + args.join(", ") + "<br>";
+};
+arrowFunc(1, 2, 3, 4);
+
+// Display output
+document.getElementById("output").innerHTML = output;
+
+</script>
+
+</body>
+</html>

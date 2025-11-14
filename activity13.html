@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Switch Example</title>
+</head>
+<body>
+
+<h2>Switch Statement Demo</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+// Example 1: Day of the week
+let day = 3;
+output += "<b>Day Example:</b> ";
+switch(day) {
+    case 1: output += "Monday"; break;
+    case 2: output += "Tuesday"; break;
+    case 3: output += "Wednesday"; break;
+    case 4: output += "Thursday"; break;
+    case 5: output += "Friday"; break;
+    default: output += "Weekend"; break;
+}
+output += "<br><br>";
+
+// Example 2: Fruits
+let fruit = "Apple";
+output += "<b>Fruit Example:</b> ";
+switch(fruit) {
+    case "Apple":
+    case "Mango":
+    case "Banana":
+        output += "This is a tropical fruit"; break;
+    case "Orange":
+        output += "Citrus fruit"; break;
+    default:
+        output += "Unknown fruit"; break;
+}
+output += "<br><br>";
+
+// Example 3: Scores
+let score = 2;
+output += "<b>Score Example:</b> ";
+switch(score) {
+    case 1: output += "Poor"; break;
+    case 2: output += "Average"; break;
+    case 3: output += "Good"; break;
+    default: output += "Invalid score"; break;
+}
+
+// Display output
+document.getElementById("output").innerHTML = output;
+
+</script>
+
+</body>
+</html>

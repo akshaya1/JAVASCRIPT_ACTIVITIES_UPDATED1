@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Call Stack Demo</title>
+</head>
+<body>
+
+<h2>Call Stack Demo</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+function first() {
+    output += "Entered first()<br>";
+    second();
+    output += "Exiting first()<br>";
+}
+
+function second() {
+    output += "Entered second()<br>";
+    third();
+    output += "Exiting second()<br>";
+}
+
+function third() {
+    output += "Entered third()<br>";
+    output += "Exiting third()<br>";
+}
+
+first();
+
+document.getElementById("output").innerHTML = output;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Loops</title>
+</head>
+<body>
+
+<h2>Loops in JavaScript</h2>
+<p id="output"></p>
+
+<script>
+let result = "";
+
+// For Loop
+result += "<b>For Loop:</b><br>";
+for (let i = 1; i <= 5; i++) {
+    result += "Number: " + i + "<br>";
+}
+
+// While Loop
+result += "<br><b>While Loop:</b><br>";
+let j = 1;
+while (j <= 5) {
+    result += "Number: " + j + "<br>";
+    j++;
+}
+
+// Do...While Loop
+result += "<br><b>Do...While Loop:</b><br>";
+let k = 1;
+do {
+    result += "Number: " + k + "<br>";
+    k++;
+} while (k <= 5);
+
+// For...in Loop (Objects)
+result += "<br><b>For...in Loop (Objects):</b><br>";
+let person = { name: "Akshaya", age: 22, city: "Mumbai" };
+for (let key in person) {
+    result += key + ": " + person[key] + "<br>";
+}
+
+// For...of Loop (Arrays)
+result += "<br><b>For...of Loop (Arrays):</b><br>";
+let fruits = ["Apple", "Banana", "Mango"];
+for (let fruit of fruits) {
+    result += fruit + "<br>";
+}
+
+// Display output
+document.getElementById("output").innerHTML = result;
+
+</script>
+
+</body>
+</html>

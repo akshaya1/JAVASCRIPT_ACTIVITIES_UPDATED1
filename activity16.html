@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Math Object</title>
+</head>
+<body>
+
+<h2>JavaScript Math Object Demo</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+// Math Properties
+output += "<b>Math Properties:</b><br>";
+output += "PI: " + Math.PI + "<br>";
+output += "Euler's Number (E): " + Math.E + "<br>";
+output += "Square Root of 2: " + Math.SQRT2 + "<br>";
+output += "Square Root of 1/2: " + Math.SQRT1_2 + "<br><br>";
+
+// Math Methods
+output += "<b>Math Methods:</b><br>";
+output += "Round 4.7: " + Math.round(4.7) + "<br>";
+output += "Ceil 4.2: " + Math.ceil(4.2) + "<br>";
+output += "Floor 4.8: " + Math.floor(4.8) + "<br>";
+output += "Absolute of -10: " + Math.abs(-10) + "<br>";
+output += "Square Root of 16: " + Math.sqrt(16) + "<br>";
+output += "2^3: " + Math.pow(2,3) + "<br>";
+output += "Min of (5,3,8): " + Math.min(5,3,8) + "<br>";
+output += "Max of (5,3,8): " + Math.max(5,3,8) + "<br>";
+output += "Random number (0-1): " + Math.random() + "<br>";
+output += "Truncate 4.9: " + Math.trunc(4.9) + "<br>";
+
+// Display output
+document.getElementById("output").innerHTML = output;
+</script>
+
+</body>
+</html>

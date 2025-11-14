@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Objects</title>
+</head>
+<body>
+
+<h2>JavaScript Objects Demo</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+// Creating an object
+let person = {
+    name: "Akshaya",
+    age: 22,
+    city: "Mumbai",
+    greet() {
+        return "Hello, I am " + this.name;
+    }
+};
+
+// Accessing properties
+output += "<b>Access Properties:</b><br>";
+output += "Name: " + person.name + "<br>";
+output += "Age: " + person["age"] + "<br>";
+output += "City: " + person.city + "<br><br>";
+
+// Adding a property
+person.country = "India";
+output += "<b>After Adding Property:</b><br>";
+output += "Country: " + person.country + "<br><br>";
+
+// Updating property
+person.age = 23;
+output += "<b>After Updating Age:</b><br>";
+output += "Age: " + person.age + "<br><br>";
+
+// Using method
+output += "<b>Using Method:</b><br>";
+output += person.greet() + "<br><br>";
+
+// Looping through object
+output += "<b>Looping through Object:</b><br>";
+for (let key in person) {
+    output += key + ": " + person[key] + "<br>";
+}
+
+// Display output
+document.getElementById("output").innerHTML = output;
+
+</script>
+
+</body>
+</html>

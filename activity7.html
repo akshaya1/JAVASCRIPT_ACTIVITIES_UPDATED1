@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Parameters Example</title>
+</head>
+<body>
+
+    <h2>Parameters & Optional Parameters</h2>
+    <p id="output"></p>
+
+    <script>
+        let text = "";
+
+        // Function with Parameters
+        function introduce(name, age) {
+            text += "<b>Function with Parameters:</b><br>";
+            text += "Name: " + name + "<br>";
+            text += "Age: " + age + "<br><br>";
+        }
+
+        // Function with Optional Parameters using default values
+        function greet(name = "Guest", city = "Unknown") {
+            text += "<b>Function with Optional Parameters:</b><br>";
+            text += "Hello " + name + " from " + city + "<br><br>";
+        }
+
+        // Calling the functions
+        introduce("Akshaya", 25);
+        greet();                                // no arguments
+        greet("Akshaya");                       // city missing → default used
+        greet("Akshaya", "Badlapur");           // both provided
+
+        // Display output
+        document.getElementById("output").innerHTML = text;
+
+    </script>
+
+</body>
+</html>

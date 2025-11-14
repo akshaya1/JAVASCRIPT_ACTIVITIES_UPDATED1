@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Data Structure in JS</title>
+</head>
+<body>
+
+<h2>JavaScript Object Data Structure Demo</h2>
+<p id="output"></p>
+
+<script>
+let output = "";
+
+// Creating object
+let person = {
+    name: "Akshaya",
+    age: 22,
+    city: "Mumbai",
+    greet() {
+        return "Hello, I am " + this.name;
+    }
+};
+
+// Accessing and updating
+output += "<b>Access Properties:</b><br>";
+output += "Name: " + person.name + "<br>";
+output += "Age: " + person.age + "<br><br>";
+
+person.age = 23;
+person.country = "India";
+
+output += "<b>Updated Properties:</b><br>";
+output += "Age: " + person.age + "<br>";
+output += "Country: " + person.country + "<br><br>";
+
+// Nested object
+person.marks = { math: 90, english: 85 };
+output += "<b>Nested Object:</b><br>";
+output += "Math Marks: " + person.marks.math + "<br>";
+output += "English Marks: " + person.marks.english + "<br><br>";
+
+// Iterating through object
+output += "<b>Iterating Object:</b><br>";
+for (let key in person) {
+    output += key + ": " + person[key] + "<br>";
+}
+
+// Using method
+output += "<br><b>Using Method:</b><br>";
+output += person.greet() + "<br>";
+
+// Display output
+document.getElementById("output").innerHTML = output;
+</script>
+
+</body>
+</html>

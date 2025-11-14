@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Values and Types in JavaScript</title>
+</head>
+<body>
+
+    <h2>JavaScript Values and Types</h2>
+
+    <button onclick="showTypes()">Show Values & Types</button>
+
+    <pre id="output" style="background:#f3f3f3; padding:15px; border-radius:8px;"></pre>
+
+    <script>
+        function showTypes() {
+
+            let username = "Akshaya";       // string
+            let age = 22;                   // number
+            let height = 5.4;               // number
+            let isAdult = age >= 18;        // boolean
+            let hobbies = ["coding", "music"]; // array
+            let details = { city: "Mumbai", pin: 421503 }; // object
+            let nothing = null;             // null
+            let notGiven;                   // undefined
+
+            let result = "";
+
+            result += "username: " + username + " → " + typeof username + "\n";
+            result += "age: " + age + " → " + typeof age + "\n";
+            result += "height: " + height + " → " + typeof height + "\n";
+            result += "isAdult: " + isAdult + " → " + typeof isAdult + "\n";
+            result += "hobbies: " + JSON.stringify(hobbies) + " → " + typeof hobbies + "\n";
+            result += "details: " + JSON.stringify(details) + " → " + typeof details + "\n";
+            result += "nothing: " + nothing + " → " + typeof nothing + "\n";
+            result += "notGiven: " + notGiven + " → " + typeof notGiven + "\n";
+
+            document.getElementById("output").innerText = result;
+        }
+    </script>
+
+</body>
+</html>
